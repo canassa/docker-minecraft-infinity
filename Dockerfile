@@ -9,12 +9,11 @@ RUN addgroup --gid 1234 minecraft
 RUN adduser --disabled-password --home=/data --uid 1234 --gid 1234 --gecos "minecraft user" minecraft
 
 RUN mkdir /tmp/feed-the-beast && cd /tmp/feed-the-beast && \
-	wget -c http://addons-origin.cursecdn.com/files/2293/83/FTBInfinityEvlovedSkyblockServer_1.1.0.zip && \
-	unzip FTBInfinityEvlovedSkyblockServer_1.1.0.zip && \
-	rm FTBInfinityEvlovedSkyblockServer_1.1.0.zip && \
+	wget -c https://addons-origin.cursecdn.com/files/2320/897/FTBInfinityEvolvedSkyblockServer_1.2.0.zip && \
+	unzip FTBInfinityEvolvedSkyblockServer_1.2.0.zip && \
+	rm FTBInfinityEvolvedSkyblockServer_1.2.0.zip && \
 	bash -x FTBInstall.sh && \
 	chown -R minecraft /tmp/feed-the-beast
-
 
 USER minecraft
 
@@ -28,6 +27,6 @@ WORKDIR /data
 
 CMD /start
 
-ENV MOTD A Minecraft (FTB Infinity Evolved Skyblock 1.1.0) Server Powered by Docker
+ENV MOTD A Minecraft (FTB Infinity Evolved Skyblock 1.2.0) Server Powered by Docker
 ENV LEVEL world
 ENV JVM_OPTS -Xms2048m -Xmx2048m
